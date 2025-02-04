@@ -402,21 +402,6 @@ a:visited {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-
-    /* @media (min-width: 768px) {
-        width: 100%;
-        height: 100%;
-    } */
-
-    /* @media screen and (orientation: portrait) {
-        width: 100lvw;
-        height: 100dvh;
-    }
-
-    @media screen and (orientation: landscape) {
-        width: 100lvw;
-        height: 100lvh;
-    } */
 }
 
 .project-image-fullscreen.visible {
@@ -465,19 +450,6 @@ a:visited {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     text-align: right;
-
-    /* @media screen and (orientation: landscape) {
-        top: 3%;
-    }
-      
-    @media screen and (orientation: portrait) {
-        top: 5%;
-    } */
-
-    /* @media (min-width: 1025px) {
-        top: 0.5rem;
-        right: 0.5rem;
-    } */
 }
 
 #fullscreen i {
@@ -505,18 +477,9 @@ a:visited {
     text-align: left;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
-
-    /* @media screen and (orientation: landscape) {
-        left: 0;
-    }
-      
-    @media screen and (orientation: portrait) {
-        left: 0.2rem;
-    } */
-
+    
     @media (min-width: 1025px) {
         bottom: calc(50% - 10rem);
-        /* left: 0.2rem; */
         width: 10rem;
         height: 20rem;
     }
@@ -542,20 +505,8 @@ a:visited {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
 
-    /* @media screen and (orientation: landscape) {
-        right: 0;
-    }
-      
-    @media screen and (orientation: portrait) {
-        right: 0.2rem;
-    } */
-
-    /* border-radius: 50%;
-    background-color: rgba(var(--bg-secondary-color), 0.75); */
-
     @media (min-width: 1025px) {
         bottom: calc(50% - 10rem);
-        /* right: 0.2rem; */
         width: 10rem;
         height: 20rem;
     }
