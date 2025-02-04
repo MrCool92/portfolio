@@ -4,6 +4,7 @@
 html {
     height: 100%;
     scrollbar-gutter: stable;
+    -ms-scrollbar-gutter: stable;
 }
 
 :root {
@@ -74,7 +75,7 @@ footer {
     align-items: center;
     top: 0.5rem;
     right: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     height: 2.25rem;
     width: 2.25rem;
     border-radius: 50%;
@@ -82,12 +83,16 @@ footer {
     color: var(--link-color);
     border: 1px solid var(--link-color);
     cursor: pointer;
-    transition: ease-in-out 0.2s;
+    transition: background-position 0.2s ease-in-out, color 0.2s ease-in-out;
 
     background-image: linear-gradient(to top, var(--link-color) 50%, transparent 50%);
     background-size: 100% 200%;
     background-position: top;
-    transition: background-position color 0.2s ease-in-out;
+
+    @media (min-width: 768px) {
+        top: 0.95rem;
+        right: 0.95rem;
+    }
 }
 
 /* .toggle-theme::after {
@@ -378,9 +383,9 @@ a:visited {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: 100;
+    width: 100lvw;
+    height: 100lvh;
     background-color: var(--bg-secondary-color);
     display: flex;
     justify-content: center;
@@ -388,6 +393,11 @@ a:visited {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    @media (min-width:768px) {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .project-image-fullscreen.visible {
