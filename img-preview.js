@@ -6,11 +6,11 @@ const left = document.getElementById('arrow-left')
 const right = document.getElementById('arrow-right')
 const htmlElement = document.getElementsByTagName('html')[0];
 const bodyElement = document.getElementsByTagName('body')[0];
-const backgroundColor = bodyElement.style.getPropertyValue("background-color");
-const cachedBackgroundColor = localStorage.getItem('background-color');
+// const backgroundColor = bodyElement.style.getPropertyValue("background-color");
+// const cachedBackgroundColor = localStorage.getItem('background-color');
 
-if (!cachedBackgroundColor)
-    localStorage.setItem('background-color', backgroundColor);
+// if (!cachedBackgroundColor)
+//     localStorage.setItem('background-color', backgroundColor);
 
 const preventDefaultEventActions = (e) => {
     e.preventDefault();
@@ -36,9 +36,9 @@ images.forEach(image => {
         htmlElement.style.overflow = "hidden";
         htmlElement.style["scrollbar-gutter"] = "unset";
 
-        if (!cachedBackgroundColor) localStorage.setItem('background-color', backgroundColor);
+        // if (!cachedBackgroundColor) localStorage.setItem('background-color', backgroundColor);
 
-        bodyElement.style.backgroundColor = "var(--bg-secondary-color)";
+        // bodyElement.style.backgroundColor = "var(--bg-secondary-color)";
     });
 });
 
@@ -47,7 +47,7 @@ const closeImage = () => {
     fullscreenElements.removeChild(fullscreenElements.lastChild);
     htmlElement.style.overflow = "auto";
     htmlElement.style["scrollbar-gutter"] = "stable";
-    bodyElement.style.backgroundColor = cachedBackgroundColor;
+    // bodyElement.style.backgroundColor = cachedBackgroundColor;
 }
 
 closeBtn.addEventListener('click', (e) => {
