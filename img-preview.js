@@ -5,6 +5,11 @@ const left = document.getElementById('arrow-left')
 const right = document.getElementById('arrow-right')
 const htmlElement = document.getElementsByTagName('html')[0];
 
+const preventDefaultEventActions = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+};
+
 const createNewImageElement = (image) => {
     let fullscreenImage = document.createElement("img");
     fullscreenImage.id = image.id;
@@ -69,13 +74,10 @@ const iterateImage = (position) => {
     let nextImage = images[nextImageIndex];
     let fullscreenImage = createNewImageElement(nextImage);
 
-    const preventImageActions = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-    };
-
-    fullscreenImage.ontouchstart = preventImageActions;
-    fullscreenImage.onclick = preventImageActions;
+    fullscreenImage.ontouchstart = preventDefaultEventActions;
+    fullscreenImage.onclick = preventDefaultEventActions;
+    fullscreenImage.ondrag = preventDefaultEventActions;
+    fullscreenImage.ondragstart = preventDefaultEventActions;
 
     fullscreen.appendChild(fullscreenImage);
 }
