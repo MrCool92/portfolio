@@ -431,7 +431,8 @@ a:visited {
 }
 
 .close {
-    position: absolute;
+    position: fixed;
+    top: 0.2rem;
     right: 0;
     color: #fff;
     font-size: 4rem;
@@ -452,14 +453,13 @@ a:visited {
     touch-action: manipulation;
     text-align: right;
 
-    @media screen and (orientation: landscape) {
+    /* @media screen and (orientation: landscape) {
         top: 3%;
     }
       
     @media screen and (orientation: portrait) {
         top: 5%;
-    }
-
+    } */
 
     @media (min-width: 1025px) {
         top: 0.5rem;
@@ -474,7 +474,7 @@ a:visited {
 }
 
 .arrow-left {
-    position: absolute;
+    position: fixed;
     bottom: calc(50% - 5rem);
     left: 0;
     cursor: pointer;
@@ -510,7 +510,7 @@ a:visited {
 }
 
 .arrow-right {
-    position: absolute;
+    position: fixed;
     bottom: calc(50% - 5rem);
     right: 0;
     cursor: pointer;
