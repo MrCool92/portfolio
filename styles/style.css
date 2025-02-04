@@ -393,8 +393,8 @@ a:visited {
     top: 0;
     left: 0;
     z-index: 100;
-    width: 100%;
-    height: 100%;
+    width: var(--real-width);
+    height: var(--real-height);
     background-color: var(--bg-secondary-color);
     display: flex;
     justify-content: center;

@@ -125,3 +125,15 @@ fullscreen.addEventListener("click", (e) => {
         closeImage();
     }
 });
+
+function fixViewport() {
+    document.documentElement.style.setProperty('--real-height', `${window.innerHeight}px`);
+    document.documentElement.style.setProperty('--real-width', `${window.innerWidth}px`);
+}
+
+window.addEventListener('resize', fixViewport);
+window.addEventListener('orientationchange', fixViewport);
+
+console.log('window.innerWidth', window.innerWidth)
+
+fixViewport();
