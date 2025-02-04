@@ -3,6 +3,7 @@ const fullscreen = document.getElementById('fullscreen')
 const closeBtn = document.getElementById('close')
 const left = document.getElementById('arrow-left')
 const right = document.getElementById('arrow-right')
+const htmlElement = document.getElementsByTagName('html')[0];
 
 const createNewImageElement = (image) => {
     let fullscreenImage = document.createElement("img");
@@ -19,12 +20,17 @@ images.forEach(image => {
         var fullscreenImage = createNewImageElement(image);
         fullscreen.appendChild(fullscreenImage);
         fullscreen.classList.add("visible");
+
+        htmlElement.style.overflow = "hidden";
+        htmlElement.style["scrollbar-gutter"] = "unset";
     });
 });
 
 const closeImage = () => {
     fullscreen.classList.remove('visible');
     fullscreen.removeChild(fullscreen.lastChild);
+    htmlElement.style.overflow = "auto";
+    htmlElement.style["scrollbar-gutter"] = "stable";
 }
 
 closeBtn.addEventListener('click', (e) => {

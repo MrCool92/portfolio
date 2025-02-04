@@ -4,7 +4,6 @@
 html {
     height: 100%;
     scrollbar-gutter: stable;
-    -ms-scrollbar-gutter: stable;
 }
 
 :root {
@@ -157,6 +156,15 @@ nav>a {
     font-weight: 400;
     cursor: pointer;
     text-decoration: none;
+    line-height: 2.5;
+
+    @media (min-width: 768px) {
+        line-height: 1.5;
+    }
+}
+
+nav>a:not(:last-child) {
+    margin-right: 1rem;
 }
 
 nav>a:visited {
@@ -175,9 +183,6 @@ nav>a.active {
     background-size: 100% 2px;
 }
 
-nav>a+a {
-    margin-left: 1rem;
-}
 
 li {
     margin-top: 0.5rem;
@@ -384,8 +389,8 @@ a:visited {
     top: 0;
     left: 0;
     z-index: 100;
-    width: 100lvw;
-    height: 100lvh;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--bg-secondary-color);
     display: flex;
     justify-content: center;
