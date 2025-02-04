@@ -393,8 +393,8 @@ a:visited {
     top: 0;
     left: 0;
     z-index: 100;
-    width: 100%;
-    height: 100%;
+    width: 100lvw;
+    height: 100lvh;
     background-color: var(--bg-secondary-color);
     display: flex;
     justify-content: center;
@@ -406,6 +406,16 @@ a:visited {
     /* @media (min-width: 768px) {
         width: 100%;
         height: 100%;
+    } */
+
+    /* @media screen and (orientation: portrait) {
+        width: 100lvw;
+        height: 100dvh;
+    }
+
+    @media screen and (orientation: landscape) {
+        width: 100lvw;
+        height: 100lvh;
     } */
 }
 
@@ -426,21 +436,11 @@ a:visited {
 
 .fullscreen-elements {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media screen and (orientation: portrait) {
-        width: 100lvw;
-        height: 100dvh;
-    }
-
-    @media screen and (orientation: landscape) {
-        width: 100lvw;
-        height: 100lvh;
-    }
 }
 
 .close {
