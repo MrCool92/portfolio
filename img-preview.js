@@ -68,6 +68,15 @@ const iterateImage = (position) => {
     fullscreen.removeChild(fullscreen.lastChild);
     let nextImage = images[nextImageIndex];
     let fullscreenImage = createNewImageElement(nextImage);
+
+    const preventImageActions = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
+    fullscreenImage.ontouchstart = preventImageActions;
+    fullscreenImage.onclick = preventImageActions;
+
     fullscreen.appendChild(fullscreenImage);
 }
 
