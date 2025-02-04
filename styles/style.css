@@ -420,6 +420,16 @@ a:visited {
     }
 }
 
+.fullscreen-elements {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .close {
     position: absolute;
     top: 0.2rem;
@@ -513,9 +523,9 @@ a:visited {
     }
 }
 
-.project-image-fullscreen.visible>.close,
-.project-image-fullscreen.visible>.arrow-left,
-.project-image-fullscreen.visible>.arrow-right {
+.project-image-fullscreen.visible .close,
+.project-image-fullscreen.visible .arrow-left,
+.project-image-fullscreen.visible .arrow-right {
     opacity: 1;
     visibility: visible;
 }

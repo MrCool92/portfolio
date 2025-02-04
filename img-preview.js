@@ -1,5 +1,6 @@
 const images = document.querySelectorAll('img[id^="image-"]')
 const fullscreen = document.getElementById('fullscreen')
+const fullscreenElements = fullscreen.firstElementChild;
 const closeBtn = document.getElementById('close')
 const left = document.getElementById('arrow-left')
 const right = document.getElementById('arrow-right')
@@ -29,7 +30,7 @@ images.forEach(image => {
     image.addEventListener('click', (e) => {
         e.stopPropagation();
         var fullscreenImage = createNewImageElement(image);
-        fullscreen.appendChild(fullscreenImage);
+        fullscreenElements.appendChild(fullscreenImage);
         fullscreen.classList.add("visible");
 
         htmlElement.style.overflow = "hidden";
@@ -43,7 +44,7 @@ images.forEach(image => {
 
 const closeImage = () => {
     fullscreen.classList.remove('visible');
-    fullscreen.removeChild(fullscreen.lastChild);
+    fullscreenElements.removeChild(fullscreenElements.lastChild);
     htmlElement.style.overflow = "auto";
     htmlElement.style["scrollbar-gutter"] = "stable";
     bodyElement.style.backgroundColor = cachedBackgroundColor;
@@ -66,7 +67,7 @@ const RIGHT = 'RIGHT';
 const isPositionValid = (position) => position && (position === LEFT || position === RIGHT);
 
 const iterateImage = (position) => {
-    const currentImageId = fullscreen.lastChild.id;
+    const currentImageId = fullscreenElements.lastChild.id;
     let currentImageIndex = findImageIndex(currentImageId);
     if (!isPositionValid(position) && !currentImageIndex && currentImageIndex !== 0) {
         closeImage();
@@ -81,7 +82,7 @@ const iterateImage = (position) => {
             nextImageIndex = currentImageIndex + 1;
         }
     }
-    fullscreen.removeChild(fullscreen.lastChild);
+    fullscreenElements.removeChild(fullscreenElements.lastChild);
     let nextImage = images[nextImageIndex];
     let fullscreenImage = createNewImageElement(nextImage);
 
@@ -90,7 +91,7 @@ const iterateImage = (position) => {
     fullscreenImage.ondrag = preventDefaultEventActions;
     fullscreenImage.ondragstart = preventDefaultEventActions;
 
-    fullscreen.appendChild(fullscreenImage);
+    fullscreenElements.appendChild(fullscreenImage);
 }
 
 left.addEventListener('click', (e) => {
