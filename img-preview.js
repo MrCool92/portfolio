@@ -33,7 +33,7 @@ images.forEach(image => {
         fullscreenElements.appendChild(fullscreenImage);
         fullscreen.classList.add("visible");
 
-        htmlElement.style.overflow = "hidden";
+        htmlElement.style.overflowY = "hidden";
         htmlElement.style["scrollbar-gutter"] = "unset";
 
         // if (!cachedBackgroundColor) localStorage.setItem('background-color', backgroundColor);
@@ -45,7 +45,7 @@ images.forEach(image => {
 const closeImage = () => {
     fullscreen.classList.remove('visible');
     fullscreenElements.removeChild(fullscreenElements.lastChild);
-    htmlElement.style.overflow = "auto";
+    htmlElement.style.overflowY = "auto";
     htmlElement.style["scrollbar-gutter"] = "stable";
     // bodyElement.style.backgroundColor = cachedBackgroundColor;
 }
