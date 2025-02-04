@@ -433,7 +433,7 @@ a:visited {
     align-items: center;
 
     @media screen and (orientation: portrait) {
-        width: 100dvw;
+        width: 100lvw;
         height: 100dvh;
     }
 
